@@ -27,12 +27,12 @@ const crearProducto = async (req, res) => {
         const codigo_de_barras = req.body.codigo_de_barras;
         const stock_minimo = req.body.stock_minimo;
 
-        const [rows, rowCount] = await pool.query(
+        const [result] = await pool.query(
             'INSERT INTO producto (id_categoria, nombre_producto, descripcion_producto, precio, cantidad_disponible, codigo_de_barras, stock_minimo) VALUES (?,?,?,?,?,?,?)', 
             [id_categoria, nombre_producto, descripcion_producto, precio, cantidad_disponible, codigo_de_barras, stock_minimo]
         );
         
-        if(rowCount === 0){
+        if(result.affectedRows === 0){
             return res.status(400).json({ error: 'Error al insertar' });
         }
 
