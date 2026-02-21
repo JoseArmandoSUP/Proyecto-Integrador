@@ -79,8 +79,8 @@ const editarProducto = async (req, res) => {
 const borrarProducto = async (req, res) => {
     const id_producto = parseInt(req.params.id_producto);
     try{
-        const [rowCount] = await pool.query('DELETE FROM producto WHERE id = ?', [id_producto]);
-        if(rowCount === 0){
+        const [resultado] = await pool.query('DELETE FROM producto WHERE id = ?', [id_producto]);
+        if(resultado.affectedRows === 0){
             return res.status(400).json({ error: 'Producto no encontrado' });
         }
         res.json({ 
