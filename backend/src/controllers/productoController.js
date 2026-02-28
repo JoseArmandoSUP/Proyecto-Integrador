@@ -52,19 +52,19 @@ const crearProducto = async (req, res) => {
 
 const editarProducto = async (req, res) => {
     try{
-        const id_producto = parseInt(req.body.id_producto);
+        const id_producto = parseInt(req.params.id_producto);
         const precio = req.body.precio;
         const cantidad_disponible = req.body.cantidad_disponible;
         
-        const [rows, rowCount] = await pool.query('UPDATE producto SET precio = ?, cantidad_disponible = ? WHERE id_producto = ?', [precio, cantidad_disponible, id_producto]);
+        const [result] = await pool.query('UPDATE producto SET precio = ?, cantidad_disponible = ? WHERE id_producto = ?', [precio, cantidad_disponible, id_producto]);
         
-        if(rowCount === 0){
-            return res.status(400).json({ error: 'Error al editar' });
+        if(result.affectedRows === 0){
+            return res.status(404).json({ error: 'Error al editar' });
         }
 
-        res.status(201).json({
+        res.status(200).json({
             exito: true,
-            datos: rows,
+            datos: result,
             msg: "Producto editado correctamente"
         });
     }catch (error){
@@ -79,13 +79,14 @@ const editarProducto = async (req, res) => {
 const borrarProducto = async (req, res) => {
     const id_producto = parseInt(req.params.id_producto);
     try{
-        const [resultado] = await pool.query('DELETE FROM producto WHERE id = ?', [id_producto]);
+        const [resultado] = await pool.query('DELETE FROM producto WHERE id_producto = ?', [id_producto]);
         if(resultado.affectedRows === 0){
-            return res.status(400).json({ error: 'Producto no encontrado' });
+            return res.status(404).json({ error: 'Producto no encontrado' });
         }
-        res.json({ 
+        res.status(200).json({ 
             exito: true,
-            msg: 'Producto eliminado: ', id_producto
+            msg: 'Producto eliminado: ', 
+            id_producto: id_producto
         });
     }catch (error){
         res.status(500).json({ 
