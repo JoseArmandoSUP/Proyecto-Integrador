@@ -5,6 +5,7 @@ require('dotenv').config();
 const productoRoute = require('./routes/productoRoute'); // <---- Modulo de Productos
 const usuarioRoute = require('./routes/usuarioRoute'); // <----- Modulo de Usuarios
 const clienteRoute = require('./routes/clienteRoute'); // <----- Modulo de Clientes
+const categoriaRoute = require('./routes/categoriaRoute'); // <----- Modulo de Categorias
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.json()); // <---- Midleware
 app.use('/api/pi/productos', productoRoute); // <---- Modulo de Productos
 app.use('/api/pi/usuarios', usuarioRoute); // <----- Modulo de Usuario
 app.use('/api/pi/clientes', clienteRoute); // <----- Modulo de Clientes
+app.use('/api/pi/categoria', categoriaRoute); // <----- Modulo de Categorias
 
 // Midleware 404 general
 app.use((req, res) => {
