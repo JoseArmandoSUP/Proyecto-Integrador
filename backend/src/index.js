@@ -6,6 +6,7 @@ const productoRoute = require('./routes/productoRoute'); // <---- Modulo de Prod
 const usuarioRoute = require('./routes/usuarioRoute'); // <----- Modulo de Usuarios
 const clienteRoute = require('./routes/clienteRoute'); // <----- Modulo de Clientes
 const categoriaRoute = require('./routes/categoriaRoute'); // <----- Modulo de Categorias
+const proveedorRoute = require('./routes/proveedorRoute') // <------ Modulo de Proveedores
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use('/api/pi/productos', productoRoute); // <---- Modulo de Productos
 app.use('/api/pi/usuarios', usuarioRoute); // <----- Modulo de Usuario
 app.use('/api/pi/clientes', clienteRoute); // <----- Modulo de Clientes
 app.use('/api/pi/categoria', categoriaRoute); // <----- Modulo de Categorias
+app.use('/api/pi/proveedor', proveedorRoute); // <----- Modulo de Proveedores
 
 // Midleware 404 general
 app.use((req, res) => {
