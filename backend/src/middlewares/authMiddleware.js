@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 
 const verificarToken = async (req, res, next) => {
-    const token = req.header('Autorizacion');
+    const token = req.header('Authorization');
 
     if(!token){
         return res.status(401).json({
@@ -16,8 +16,8 @@ const verificarToken = async (req, res, next) => {
 
         req.usuario = decoded;
         next();
-    }catch(erorr){
-        req.status(401).json({
+    }catch(error){
+        res.status(401).json({
             exito: false,
             msg: "Token inválido" 
         });
