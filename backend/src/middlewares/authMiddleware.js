@@ -12,7 +12,7 @@ const verificarToken = async (req, res, next) => {
 
     try{
         const tokenNuevo = token.replace('Bearer ', '');
-        const decoded = jwt.verify(tokenNuevo, procces.env.JWT_SECRET);
+        const decoded = jwt.verify(tokenNuevo, process.env.JWT_SECRET);
 
         req.usuario = decoded;
         next();
