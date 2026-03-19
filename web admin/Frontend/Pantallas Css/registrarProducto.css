@@ -1,12 +1,36 @@
 body{
     display: flex; 
     flex-direction: column;
-    justify-content: center;
     font-family: Arial, Helvetica, sans-serif; 
     background-color: #D6D6D6;
 }
 h1{
     color: white;
+}
+h2{
+    margin-left: 320px;
+}
+input{
+    background-color: transparent;
+    width: 400px;
+    height: 30px;
+    border-radius: 10px;
+    border-color: black;  
+}
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 320px;
+}
+img{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 500px;
+    margin-left: 70px;
+}
+#boton-flecha{
+    margin-top: 100px;
 }
 #encabezado{
     display: flex;
@@ -18,9 +42,8 @@ h1{
     margin-bottom: 20px; 
     margin-top: 20px;
 }
-#recursos-registror{
+#recursos-registro{
     display: flex;
-    flex-direction: column;
     align-items: center;
     margin-left: 8px;
     height: 550px;
@@ -30,8 +53,13 @@ h1{
     background-color: white;
 }
 #recurso-gris{
+    background-color: #D6D6D6;
     display: flex;
     flex-direction: column;
+    margin-left: 200px;
+    border-radius: 10px;
+    width: 900px;
+    height: 430px;
 }
 .formulario-registro{
     display: flex;
@@ -46,4 +74,10 @@ h1{
     overflow: hidden;
     color: white;
 
+}
+::placeholder{
+    color: black;
+}
+.campo{
+    margin-left: 20px;
 }
