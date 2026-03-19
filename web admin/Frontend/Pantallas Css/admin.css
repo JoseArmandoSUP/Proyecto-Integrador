@@ -1,0 +1,235 @@
+:root {
+    --primary-color: #1a237e; /* Azul oscuro */
+    --primary-light: #3949ab;
+    --bg-color: #d9d9d9;      /* Gris de fondo claro */
+    --card-bg: #ffffff;
+    --text-main: #000000;
+    --btn-gray: #e0e0e0;
+    --btn-danger: #b71c1c;    /* Rojo oscuro */
+    --btn-edit: #2e7d32;      /* Verde */
+    --border-color: #9e9e9e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+}
+
+/* Navbar Superior */
+.admin-navbar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-left, .navbar-center, .navbar-right {
+    flex: 1;
+}
+
+.navbar-center {
+    text-align: center;
+}
+
+.navbar-center h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.navbar-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+}
+
+.search-bar {
+    background-color: var(--primary-light);
+    border-radius: 20px;
+    padding: 0.4rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    width: 250px;
+    height: 35px;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    stroke: white;
+    fill: none;
+    stroke-width: 2;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    stroke: white;
+    fill: none;
+    stroke-width: 2;
+    cursor: pointer;
+}
+
+/* Contenedor Principal */
+.admin-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+/* Sección Bienvenida */
+.welcome-section {
+    position: relative;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.back-btn {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.back-btn svg {
+    width: 28px;
+    height: 28px;
+    stroke: var(--text-main);
+    fill: none;
+    stroke-width: 2;
+}
+
+.welcome-text h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.welcome-text p {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Pestañas (Tabs) */
+.admin-tabs {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--btn-gray);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.2s;
+}
+
+.tab-btn:hover {
+    background-color: #d5d5d5;
+}
+
+.tab-btn.active {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+}
+
+.tab-btn.btn-danger {
+    background-color: var(--btn-danger);
+    color: white;
+}
+
+.tab-btn.btn-danger:hover {
+    background-color: #9b1515;
+}
+
+/* Tabla */
+.table-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+    overflow-x: auto;
+}
+
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.inventory-table th {
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--text-main);
+}
+
+.inventory-table td {
+    padding: 1rem 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1rem;
+}
+
+.inventory-table tr:last-child td {
+    border-bottom: 2px solid var(--text-main);
+}
+
+.inventory-table input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--text-main);
+}
+
+/* Botones Inferiores */
+.bottom-actions {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-edit, .btn-add {
+    padding: 0.6rem 2rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: opacity 0.2s;
+}
+
+.btn-edit {
+    background-color: var(--btn-edit);
+    border-color: #1b5e20;
+}
+
+.btn-add {
+    background-color: var(--primary-color);
+    border-color: #000051;
+}
+
+.btn-edit:hover, .btn-add:hover {
+    opacity: 0.9;
+}

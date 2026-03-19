@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración - Inventario</title>
+    <!-- Enlace al nuevo archivo CSS -->
+    <link rel="stylesheet" href="../Pantallas Css/admin.css">
+</head>
+<body>
+
+    <!-- Navbar Superior -->
+    <header class="admin-navbar">
+        <div class="navbar-left">
+            <div class="search-bar">
+                <svg viewBox="0 0 24 24" class="search-icon">
+                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+        </div>
+        <div class="navbar-center">
+            <h1>Administración</h1>
+        </div>
+        <div class="navbar-right">
+            <!-- Campana -->
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+            </svg>
+            <!-- Descargar -->
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
+            <!-- Subir -->
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+            </svg>
+            <!-- Usuario -->
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="admin-container">
+        
+        <!-- Sección de Bienvenida y Botón Atrás -->
+        <div class="welcome-section">
+            <button class="back-btn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+            </button>
+            <div class="welcome-text">
+                <h2>Bienvenid@</h2>
+                <p>¿Qué haremos hoy?</p>
+            </div>
+        </div>
+
+        <!-- Pestañas de Navegación -->
+        <nav class="admin-tabs">
+            <button class="tab-btn">Historial</button>
+            <button class="tab-btn active">Inventario</button>
+            <button class="tab-btn">Reportes</button>
+            <button class="tab-btn">Facturas</button>
+            <button class="tab-btn btn-danger">Cerrar día</button>
+        </nav>
+
+        <!-- Tabla de Datos -->
+        <div class="table-card">
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th></th> <!-- Para el checkbox -->
+                        <th>Nombre</th>
+                        <th>Stock</th>
+                        <th>Precio compra</th>
+                        <th>Precio venta</th>
+                        <th>Categoria</th>
+                        <th>ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Fila 1 (Marcada) -->
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Nombre</td>
+                        <td>23</td>
+                        <td>$ 500</td>
+                        <td>$ 1000</td>
+                        <td>okokokok</td>
+                        <td>1</td>
+                    </tr>
+                    <!-- Fila 2 -->
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Nombre</td>
+                        <td>23</td>
+                        <td>$ 500</td>
+                        <td>$ 1000</td>
+                        <td>okokokok</td>
+                        <td>2</td>
+                    </tr>
+                    <!-- Fila 3 -->
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Nombre</td>
+                        <td>23</td>
+                        <td>$ 500</td>
+                        <td>$ 1000</td>
+                        <td>okokokok</td>
+                        <td>3</td>
+                    </tr>
+                    <!-- Fila 4 -->
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Nombre</td>
+                        <td>23</td>
+                        <td>$ 500</td>
+                        <td>$ 1000</td>
+                        <td>okokokok</td>
+                        <td>4</td>
+                    </tr>
+                    <!-- Fila 5 -->
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Nombre</td>
+                        <td>23</td>
+                        <td>$ 500</td>
+                        <td>$ 1000</td>
+                        <td>okokokok</td>
+                        <td>5</td>
+                    </tr>
+                    <!-- Fila 6 -->
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Nombre</td>
+                        <td>23</td>
+                        <td>$ 500</td>
+                        <td>$ 1000</td>
+                        <td>okokokok</td>
+                        <td>6</td>
+                    </tr>
+                    <!-- Fila 7 -->
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Nombre</td>
+                        <td>23</td>
+                        <td>$ 500</td>
+                        <td>$ 1000</td>
+                        <td>okokokok</td>
+                        <td>7</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Botones de Acción Inferiores -->
+        <div class="bottom-actions">
+            <button class="btn-edit">Editar producto</button>
+            <button class="btn-add">Agregar producto</button>
+        </div>
+
+    </main>
+
+</body>
+</html>
