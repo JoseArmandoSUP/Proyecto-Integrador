@@ -6,9 +6,9 @@ body{
     background-color: #D6D6D6;
 }
 h1{
-    color: white; 
+    color: white;
 }
-.encabezado{
+#encabezado{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,7 +18,7 @@ h1{
     margin-bottom: 20px; 
     margin-top: 20px;
 }
-#recursos-registro{
+#recursos-registror{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,33 +29,21 @@ h1{
     overflow: hidden;  
     background-color: white;
 }
-#formulario-registro{
+#recurso-gris{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;  
-    margin-bottom: 40px;
 }
-.campo{
-    margin-bottom: 20px;
-    width: 400px;
+.formulario-registro{
+    display: flex;
+    flex-direction: row;
+}
+#boton-registrar-producto{
+    background-color: #2E7D32;
+    width: 200px;
     height: 40px;
+    margin-top: 20px;
     border-radius: 10px;
     overflow: hidden;
-    background-color: #2C2F85;
-    border-color: #2C2F85;
-}
-::placeholder{
     color: white;
-}
-#Registrarse{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 250px;
-    height: 40px;
-    border-radius: 15px;
-    overflow: hidden;
-    background-color: #2E7D32;
-    border-color: #2E7D32;
+
 }
