@@ -1,0 +1,332 @@
+:root {
+    --primary-color: #1a237e; /* Azul oscuro */
+    --bg-color: #e5e5e5;
+    --card-bg: #ffffff;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --box-bg: #f4f4f4;
+    --border-color: #cccccc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    cursor: pointer;
+}
+
+/* Main Container */
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Left Column - User Data */
+.left-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.avatar svg {
+    width: 100px;
+    height: 100px;
+    stroke: white;
+    fill: none;
+    stroke-width: 1.5;
+}
+
+h2.section-title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.personal-data-box {
+    background-color: var(--box-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    width: 100%;
+    position: relative;
+}
+
+.data-item {
+    margin-bottom: 1rem;
+}
+
+.data-item:last-child {
+    margin-bottom: 0;
+}
+
+.data-label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.data-value {
+    color: var(--text-muted);
+}
+
+.edit-icon {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 24px;
+    height: 24px;
+    stroke: var(--primary-color);
+    fill: none;
+    stroke-width: 2;
+    cursor: pointer;
+}
+
+/* Right Column - Addresses & Payments */
+.right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.section-header {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.section-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.action-box {
+    border: 1px solid var(--text-muted);
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 1rem;
+}
+
+.action-box:hover {
+    background-color: #f9f9f9;
+}
+
+.action-box svg {
+    width: 30px;
+    height: 30px;
+    stroke: black;
+    fill: none;
+    stroke-width: 2;
+    margin-bottom: 0.5rem;
+}
+
+.action-box span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 1rem 0;
+}
+
+.section-container {
+    position: relative;
+}
+
+.section-edit-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    stroke: var(--primary-color);
+    fill: none;
+    stroke-width: 2;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 
+   ----------------------------------------
+   ESTILOS DE LOS MODALES
+   ---------------------------------------- 
+*/
+
+.modal-overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente oscuro */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* Clase para mostrar el modal */
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #fff;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    /* Permitir scroll si la pantalla es muy pequeña */
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.modal-header h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--text-main);
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--text-main);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.btn-save {
+    display: block;
+    width: 150px;
+    margin: 1.5rem auto 0;
+    padding: 0.6rem;
+    background-color: #2e7d32; /* Verde del botón */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-save:hover {
+    background-color: #1b5e20;
+}

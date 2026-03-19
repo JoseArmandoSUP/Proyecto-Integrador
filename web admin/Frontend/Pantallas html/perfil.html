@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <!-- Asegúrate de tener la ruta correcta de tu CSS -->
+    <link rel="stylesheet" href="../Pantallas Css/styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <h1>Nombre de la tienda</h1>
+        <div class="nav-icons">
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="card">
+            
+            <!-- Columna Izquierda: Datos Personales -->
+            <div class="left-col">
+                <div class="avatar">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <h2 class="section-title">Datos personales</h2>
+                
+                <div class="personal-data-box">
+                    <div class="data-item">
+                        <span class="data-label">Nombre:</span>
+                        <span class="data-value">Arlo Jhomey Carrillo Hernández</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Correo electrónico:</span>
+                        <span class="data-value">arlo@email.com</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Número:</span>
+                        <span class="data-value">4421234567</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Dirección:</span>
+                        <span class="data-value">Avenue Evergreen, 542</span>
+                    </div>
+                    <!-- Icono de editar (con onclick para abrir modal) -->
+                    <svg class="edit-icon" viewBox="0 0 24 24" onclick="openModal('modalDatos')">
+                        <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"></path>
+                        <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Direcciones y Pagos -->
+            <div class="right-col">
+                
+                <!-- Direcciones de envío -->
+                <div class="section-container">
+                    <h3 class="section-header">Direcciones de envío</h3>
+                    <p class="section-desc">El costo de envío y tiempo de entrega pueden variar dependiendo de la dirección.</p>
+                    
+                    <div class="action-box" onclick="openModal('modalDireccion')">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 8v8M8 12h8"></path>
+                        </svg>
+                        <span>Registrar dirección de envío</span>
+                    </div>
+                    
+                    <svg class="section-edit-icon" viewBox="0 0 24 24" style="bottom: -15px;" onclick="openModal('modalDireccion')">
+                        <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"></path>
+                        <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                    </svg>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Ajustes de pagos -->
+                <div class="section-container">
+                    <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Ajustes de pagos</p>
+                    <h3 class="section-header">Métodos de pago</h3>
+                    <p class="section-desc">No tienes ningún método de pago guardado en este momento. Añade una tarjeta de crédito/débito para realizar tus compras de forma rápida y sencilla.</p>
+                    
+                    <div class="action-box" onclick="openModal('modalTarjeta')">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 8v8M8 12h8"></path>
+                        </svg>
+                        <span>Añadir nueva tarjeta</span>
+                    </div>
+
+                    <svg class="section-edit-icon" viewBox="0 0 24 24" style="bottom: -15px;" onclick="openModal('modalTarjeta')">
+                        <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"></path>
+                        <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                    </svg>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+   
+    <div id="modalDatos" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Datos personales</h3>
+                <button class="close-btn" onclick="closeModal('modalDatos')">✕</button>
+            </div>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <label>Apellido</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <label>Correo</label>
+                <input type="email">
+            </div>
+            <button class="btn-save" onclick="closeModal('modalDatos')">Guardar</button>
+        </div>
+    </div>
+
+   
+    <div id="modalDireccion" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Dirección de envío</h3>
+                <button class="close-btn" onclick="closeModal('modalDireccion')">✕</button>
+            </div>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <label>Apellido</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <label>País/región de envío</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <label>Dirección</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <label>Ciudad</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <label>Código postal</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <label>Número de teléfono</label>
+                <input type="tel">
+            </div>
+            <button class="btn-save" onclick="closeModal('modalDireccion')">Guardar</button>
+        </div>
+    </div>
+
+    <!-- Modal: Tarjeta de Crédito/Débito -->
+    <div id="modalTarjeta" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Tarjeta de Crédito / Débito</h3>
+                <button class="close-btn" onclick="closeModal('modalTarjeta')">✕</button>
+            </div>
+            <div class="form-group">
+                <label>Titular de la tarjeta</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <label>Número de tarjeta</label>
+                <input type="text">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Fecha de Expiración</label>
+                    <input type="text" placeholder="MM/AA">
+                </div>
+                <div class="form-group">
+                    <label>Código de seguridad</label>
+                    <input type="text" placeholder="CVV">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Dirección de facturación</label>
+                <input type="text">
+            </div>
+            <button class="btn-save" onclick="closeModal('modalTarjeta')">Guardar</button>
+        </div>
+    </div>
+
+    <!-- Script para abrir/cerrar modales -->
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        // Cerrar modal al hacer clic fuera del contenido
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
