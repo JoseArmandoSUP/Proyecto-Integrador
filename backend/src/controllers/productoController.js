@@ -97,4 +97,24 @@ const borrarProducto = async (req, res) => {
     }
 };
 
-module.exports = {obtenerProductos, crearProducto, editarProducto, borrarProducto};
+const alertaStockBajo = async (req, res) => {
+    try{
+        const [resultado] = await pool.query(
+            `SELECT id_producto, nombre_producto, cantidad_disponible, stock_minimo FROM producto 
+            WHERE cantidad_disponible <= stock_minimo`
+        );
+
+        res.json({
+            exito: true,
+            productos: resultado
+        });
+    }catch (error){
+        res.status(500).json({
+            exito: false,
+            msg: "Error en el servidor en alerta de stock bajo",
+            error: error.message
+        });
+    }
+};
+
+module.exports = {obtenerProductos, crearProducto, editarProducto, borrarProducto, alertaStockBajo};
