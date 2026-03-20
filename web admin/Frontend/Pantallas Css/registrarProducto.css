@@ -29,6 +29,11 @@ img{
     margin-bottom: 500px;
     margin-left: 70px;
 }
+#icono-usuario {
+    margin-bottom: 0;
+    margin-right: auto;
+    border-radius: 50%;
+}
 #boton-flecha{
     margin-top: 100px;
 }
