@@ -117,4 +117,4 @@ const alertaStockBajo = async (req, res) => {
     }
 };
 
-module.exports = {obtenerProductos, crearProducto, editarProducto, borrarProducto, alertaStockBajo};
+module.exports = {obtenerProductos, crearProducto, editarProducto, borrarProducto, alertaStockBajo};    
