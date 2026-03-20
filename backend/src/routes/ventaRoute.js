@@ -4,5 +4,8 @@ const ventaController = require('../controllers/ventaController');
 const verificarToken = require('../middlewares/authMiddleware');
 
 router.post('/', verificarToken, ventaController.registrarVenta);
+router.get('/', verificarToken, ventaController.obtenerVentas);
+router.get('/:id_venta', verificarToken, ventaController.buscarVentas);
+router.get('/reportes/masVendidos', verificarToken, ventaController.prooductosMasVendidos);
 
 module.exports = router;
