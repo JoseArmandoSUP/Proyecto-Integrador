@@ -9,7 +9,7 @@ const clienteRoute = require('./routes/clienteRoute'); // <----- Clientes
 const categoriaRoute = require('./routes/categoriaRoute'); // <----- Categorias
 const proveedorRoute = require('./routes/proveedorRoute') // <------ Proveedores
 
-// ----------------------------------------- Modulos ---------------------------------------------------
+// ----------------------------------------- Módulos ---------------------------------------------------
 const movimientoRoute = require('./routes/movimientoRoute'); // <------- Movimiento Inventario
 const ventaRoute = require('./routes/ventaRoute'); // <------- Ventas
 
