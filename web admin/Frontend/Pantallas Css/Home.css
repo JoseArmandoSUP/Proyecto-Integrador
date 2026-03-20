@@ -11,28 +11,38 @@ body {
   line-height: 1.3;
 }
 
-h1{
-    color: white; /*este si es el color de la letras*/
-}
-.encabezado{/* cuando usas class va un punto y el nombre de la clase que pusiste*/
+.encabezado {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between; 
     background-color: #2C2F85;
-    width: 100%; /*width y height son de tamaño, uno es para alto y el otro para largo, investiga cual es cual*/
+    width: 100%; 
     height: 70px;
-    margin-bottom: 20px; /*aqui pones el espacio para elementos, usas margin, ya dependiendo el lado cambias el complemento*/
-    margin-top: 20px;
+    padding: 0 30px;
+    margin-bottom: 20px;
 }
 
-.topbar-icons .icon {
-  font-size: 1.5rem;
-  margin-left: 14px;
-  cursor: pointer;
+.encabezado h1 {
+    color: white;
+    font-size: 1.8rem;
 }
 
+.topbar-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-img {
+    width: 30px !important;
+    height: 30px !important;
+    object-fit: contain;
+    filter: brightness(0) invert(1); 
+    cursor: pointer;
+}
+
+/* CAMBIO: Se aumentó el max-width para que los cuadros abarquen más */
 .container {
-  max-width: 1170px;
+  max-width: 1400px;
   margin: 16px auto;
   padding: 0 16px 24px;
 }
@@ -51,12 +61,14 @@ h1{
   align-items: center;
   background: #fff;
   border-radius: 14px;
-  padding: 12px 16px;
+  padding: 10px 16px;
 }
 
-.search-icon {
-  font-size: 1.25rem;
-  margin-right: 10px;
+.icon-lupa {
+    width: 22px !important;
+    height: 22px !important;
+    margin-right: 10px;
+    object-fit: contain;
 }
 
 .search-box input {
@@ -70,7 +82,7 @@ h1{
 .featured-card {
   background: #fff;
   border-radius: 20px;
-  padding: 18px;
+  padding: 25px;
   display: flex;
   gap: 22px;
   align-items: center;
@@ -85,7 +97,6 @@ h1{
 
 .featured-info {
   flex: 1;
-  min-width: 260px;
 }
 
 .featured-info h2 {
@@ -94,18 +105,12 @@ h1{
   margin-bottom: 8px;
 }
 
-.rating {
-  font-size: 1.2rem;
-  letter-spacing: 0.08em;
-  margin-bottom: 8px;
-}
-
 .estimate {
   font-weight: 700;
   margin-bottom: 10px;
 }
 
-.precio{
+.precio {
   font-size: 2rem;
   font-weight: 800;
   color: #0b9a1d;
@@ -140,10 +145,10 @@ h1{
 .recomendaciones {
   background: #fff;
   border-radius: 20px;
-  padding: 18px;
+  padding: 25px;
 }
 
-.recommendations h2 {
+.recomendaciones h2 {
   color: #0f2f89;
   font-size: 2rem;
   margin-bottom: 14px;
@@ -151,26 +156,23 @@ h1{
 
 .recommend-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
 
 .rec-card {
   background: #f9f9f9;
   border-radius: 14px;
-  padding: 12px;
+  padding: 15px;
   text-align: center;
 }
 
 .rec-card img {
   width: 100%;
+  height: 180px;
+  object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
-}
-
-.rec-card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 8px;
 }
 
 .rec-card .price {
@@ -180,22 +182,7 @@ h1{
 }
 
 @media (max-width: 960px) {
-  .featured-card {
-    flex-direction: column;
-  }
-  .featured-card img {
-    width: 100%;
-  }
-  .recommend-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 680px) {
-  .recommend-grid {
-    grid-template-columns: 1fr;
-  }
-  .topbar h1 {
-    font-size: 1.4rem;
-  }
+  .featured-card { flex-direction: column; }
+  .featured-card img { width: 100%; }
+  .recommend-grid { grid-template-columns: 1fr 1fr; }
 }
