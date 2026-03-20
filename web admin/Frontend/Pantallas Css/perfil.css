@@ -5,7 +5,7 @@ body{
     font-family: Arial, Helvetica, sans-serif; 
     background-color: #D6D6D6;
 }
-#encabezado{
+.encabezado{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,18 +14,12 @@ body{
     height: 70px;
     margin-bottom: 20px; 
     margin-top: 20px;
-}
-h1{
     color: white;
 }
-img{
-    width: 100px;
-    height: 100px;
-}
-#recusos-perfil{
+.recursos-perfil{
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     margin-left: 8px;
     height: 550px;
     width: 1500px;
@@ -33,20 +27,27 @@ img{
     overflow: hidden;  
     background-color: white;
 }
-.datos{
+h2{
     color: #2C2F85;
-
 }
-.datos-campo{  
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 300px;
+img{
+    width: 200px;
+    height: 200px;
+    margin-left: 350px;
+    margin-bottom: 300px;
+}
+.recursos-gris{
+    background-color: #D6D6D6;
+    width: 500px;
     height: 300px;
     border-radius: 10px;
-    overflow: hidden;
-    background-color: #D6D6D6;
 }
-.campo{
-    margin-left: 8px;
+.informacion-usuario{
+    margin-left: 14px;
+}
+.text{
+    margin-left: 30px;
+}
+.info{
+    margin-left: 30px;
 }
