@@ -170,4 +170,44 @@ const prooductosMasVendidos = async (req, res) => {
     }
 };
 
-module.exports = {registrarVenta, obtenerVentas, buscarVentas, prooductosMasVendidos};
+const cierreDeCaja = async (req, res) => {
+    try{
+        const [resultado] = await pool.query(
+            `SELECT DATE(fecha_venta) AS fecha, COUNT(id_venta) AS numero_ventas, SUM(total) AS total_vendido
+            FROM venta GROUP BY DATE(fecha_venta) ORDER BY fecha DESC`
+        );
+
+        res.json({
+            exito: true,
+            cierre_caja: resultado
+        });
+    }catch(error){
+        res.status(500).json({
+            exito: false,
+            msg: "Error en el servidor en cierre de caja",
+            error: error.message
+        });
+    }
+};
+
+const ventasMensuales = async (req, res) => {
+    try{
+        const [resultado] = await pool.query(
+            `SELECT YEAR(fecha_venta) as anio, MONTH(fecha_venta) as mes, SUM(total) AS total_vendido
+            FROM venta GROUP BY YEAR(fecha_venta), MONTH(fecha_venta) ORDER BY anio, mes`
+        );
+
+        res.json({
+            exito: true,
+            ventas_mensuales: resultado
+        });
+    }catch(error){
+        res.status(500).json({
+            exito: false, 
+            msg: "Error en el servidor en ventas mensuales",
+            error: error.message
+        });
+    }
+};
+
+module.exports = {registrarVenta, obtenerVentas, buscarVentas, prooductosMasVendidos, cierreDeCaja, ventasMensuales};

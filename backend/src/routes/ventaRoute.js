@@ -7,5 +7,7 @@ router.post('/', verificarToken, ventaController.registrarVenta);
 router.get('/', verificarToken, ventaController.obtenerVentas);
 router.get('/:id_venta', verificarToken, ventaController.buscarVentas);
 router.get('/reportes/masVendidos', verificarToken, ventaController.prooductosMasVendidos);
+router.get('/reportes/cierreCaja', verificarToken, ventaController.cierreDeCaja);
+router.get('/reportes/ventasMensuales', verificarToken, ventaController.ventasMensuales);
 
 module.exports = router;
