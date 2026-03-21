@@ -4,5 +4,6 @@ const movimientoController = require('../controllers/movimientoController');
 const verificarToken = require('../middlewares/authMiddleware')
 
 router.post('/', verificarToken, movimientoController.registrarMovimiento);
+router.get('/', verificarToken, movimientoController.verMovimientos);
 
 module.exports = router;

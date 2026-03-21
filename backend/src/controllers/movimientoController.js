@@ -75,4 +75,50 @@ const registrarMovimiento = async (req, res) => {
     }
 };
 
-module.exports = {registrarMovimiento};
+const verMovimientos = async (req, res) => {
+    try {
+
+        const { id_producto, tipo, fecha_inicio, fecha_fin } = req.query;
+
+        let query = `
+            SELECT m.id_movimiento, m.id_producto, p.nombre_producto, m.id_usuario, u.nombre_usuario, m.movimiento_tipo, m.cantidad, m.motivo, m.fecha_hora
+            FROM movimiento_inventario m JOIN producto p ON m.id_producto = p.id_producto JOIN usuario u ON m.id_usuario = u.id_usuario
+            WHERE 1=1
+        `;
+
+        let params = [];
+
+        if (id_producto) {
+            query += " AND m.id_producto = ?";
+            params.push(id_producto);
+        }
+
+        if (tipo) {
+            query += " AND m.movimiento_tipo = ?";
+            params.push(tipo);
+        }
+
+        if (fecha_inicio && fecha_fin) {
+            query += " AND DATE(m.fecha_hora) BETWEEN ? AND ?";
+            params.push(fecha_inicio, fecha_fin);
+        }
+
+        query += " ORDER BY m.fecha_hora DESC";
+
+        const [rows] = await pool.query(query, params);
+
+        res.json({
+            exito: true,
+            movimientos: rows
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            exito: false,
+            msg: "Error al obtener movimientos",
+            error: error.message
+        });
+    }
+};
+
+module.exports = {registrarMovimiento, verMovimientos};
