@@ -117,4 +117,37 @@ const alertaStockBajo = async (req, res) => {
     }
 };
 
-module.exports = {obtenerProductos, crearProducto, editarProducto, borrarProducto, alertaStockBajo};    
+const buscarProducto = async (req, res) => {
+    try{
+        const busqueda = req.query.busqueda;
+
+        const [resultado] = await pool.query(`
+            SELECT 
+                p.id_producto,
+                p.nombre_producto,
+                p.precio,
+                p.cantidad_disponible,
+                c.nombre_categoria
+            FROM producto p
+            JOIN categoria c ON p.id_categoria = c.id_categoria
+            WHERE 
+                p.nombre_producto LIKE ?
+                OR p.codigo_de_barras LIKE ?
+                OR c.nombre_categoria LIKE ?
+        `, [`%${busqueda}%`, `%${busqueda}%`, `%${busqueda}%`]
+        );
+
+        res.json({
+            exito: true,
+            productos: resultado
+        });
+    }catch (error){
+        res.status(500).json({
+            exito: false, 
+            msg: "Error en el servidor en buscar productos",
+            error: error.message
+        });
+    }
+};
+
+module.exports = {obtenerProductos, crearProducto, editarProducto, borrarProducto, alertaStockBajo, buscarProducto};    
