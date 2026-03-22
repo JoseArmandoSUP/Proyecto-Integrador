@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../Pantallas Css/login.css">
+</head>
+<body>
+
+    <header class="encabezado">   <!-- class es un identificador para css-->
+        <h1>Nombre de la tienda</h1>
+    </header> <!-- Aqui va el nombre de la tienda, conectar api-->
+    
+    <div id="recursos-login"> <!-- id tambien pero este sirve tambien para backend-->
+        <img src="../Imagenes/imagen_usuario.jpg" class="user"> <!-- aqui va la imagen del usuario para IVAN TAMBIEN-->
+
+        <form action="" id="formulario-login">
+            <input type="text" placeholder="Celular o correo electronico" class="campo">
+            <input type="password" placeholder="Contraseña" class="campo">
+
+            <button type="submit" id="boton-login">Iniciar sesión</button> <!--el tipo de boton submit es cuando al dar click el boton, 
+                                                                                se mandara informacion a la base de datos, como un formulario-->
+
+            <a href="#" id="olvidaste-tu-contraseña"> ¿Olvidaste tu contraseña? </a> <!-- href es texto, para el enlace con otra pestaña-->
+                                                                                    <!-- id es par el css, no le muevas!!! -->
+                                                                                     <!-- Estas dos notas son par IVAN-->
+        </form>
+            <button type="button" id="crear-cuenta"> <!-- en type es el tipo de boton, este no me acuero para que sirve pero es el default-->
+                <p class="texto-crear-cuenta">Crear cuenta nueva</p>
+            </button>
+    </div>
+
+</body>
+</html>

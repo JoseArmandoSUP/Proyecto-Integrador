@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Compra</title>
+    <link rel="stylesheet" href="../Pantallas Css/ConfirmarCompra.css">
+</head>
+<body>
+    <div class="confirmarCompra">
+        <header class="encabezado">
+            <h1 class="logo-tienda">Nombre de la tienda</h1>
+            
+            <h2 class="titulo-central">CONFIRMAR COMPRA</h2>
+            
+            <div class="header-icons">
+                <img src="../Imagenes/carrito.png" alt="Carrito" class="icon-img">
+                <img src="../Imagenes/usuario.png" alt="Usuario" class="icon-img">
+            </div>
+        </header>
+
+        <main class="TuPedido">
+            <section class="pedido">
+                <h2>Tu pedido</h2>
+                <div class="pedido-contenido">
+                    <div class="pedido-imagen">
+                        <img src="../Imagenes/producto.jpg" alt="Imagen producto">
+                    </div>
+                    <div class="pedido-info">
+                        <p class="pedido-producto">Nombre producto</p>
+                        <div class="pedido-total">
+                            <span>Total (1 artículo)</span>
+                            <span class="precio">$ Precio</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cliente">
+                <h2>Cliente</h2>
+                <div class="cliente-box">
+                    <div class="cliente-info">
+                        <p class="cliente-nombre">Nombre cliente</p>
+                        <p class="cliente-email">correo cliente</p>
+                        <p class="cliente-telefono">Número de teléfono</p>
+                    </div>
+                    <button class="btn-cambiar">Cambiar</button>
+                </div>
+            </section>
+
+            <section class="direccion">
+                <h2>Dirección de envío</h2>
+                <div class="direccion-box">
+                    <div class="direccion-info">
+                        <p class="pais">México</p>
+                        <p class="direccion">Dirección: </p>
+                        <p class="ciudad">ciudad</p>
+                        <p class="codigo-postal">Código postal:</p>
+                        <p class="telefono">Número de teléfono:</p>
+                    </div>
+                    <button class="btn-cambiar">Cambiar</button>
+                </div>
+            </section>
+
+            <section class="pago">
+                <h2>Método de pago</h2>
+                <div class="pago-box">
+                    <div class="pago-info">
+                        <p class="pago-tipo">Tarjeta de crédito</p>
+                        <p class="pago-numero">Visa ··· 1234</p>
+                        <p class="pago-titular">Titular: </p>
+                    </div>
+                    <button class="btn-cambiar">Cambiar</button>
+                </div>
+            </section>
+
+            <button class="btn-aceptar-pagar">Aceptar y pagar</button>
+        </main>
+    </div>
+</body>
+</html>
